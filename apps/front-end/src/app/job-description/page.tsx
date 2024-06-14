@@ -1,10 +1,10 @@
-import Header from "./Components/Header";
-import JobHeader from "./Components/JobHeader";
-import GoogleLogo from '../../../public/assets/googleLogo.png';
-import JobAdditionalDetails from "./Components/JobDetailsBar";
-import JobDetails from "./Components/JobDetails";
-import JobSideBar from "./Components/JobSideBar";
-import Sidebar from "./Components/Sidebar";
+import GoogleLogo from '../../../public/assets/images/googleLogo.png';
+import Header from '../Components/Dashboard/Header';
+import Sidebar from '../Components/Dashboard/Sidebar';
+import JobHeader from '../Components/Job_Dashboard/JobHeader';
+import JobSideBar from '../Components/Job_Dashboard/JobSideBar';
+import JobDetails from '../Components/Job_Description/JobDetails';
+import JobAdditionalDetails from '../Components/Job_Description/JobDetailsBar';
 
 export default function Home() {
   return (
