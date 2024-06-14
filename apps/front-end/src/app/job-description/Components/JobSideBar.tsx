@@ -22,8 +22,8 @@ const JobSideBar: React.FC<JobSideBarProps> = ({
     memberSince
 }) => {
     return (
-        <div className="p-8 pl-12 pt-16 mb-7 ml-8 w-72 flex flex-col justify-between h-5/12">
-            <div className="font-semibold">
+        <div className="p-8 pl-8 pt-16 mb-7 ml-8 w-72 flex flex-col">
+            <div className="font-semibold mb-6">
                 <h3>
                     <span className="text-[40px]">${price}</span>
                     &nbsp;
@@ -31,7 +31,7 @@ const JobSideBar: React.FC<JobSideBarProps> = ({
                 </h3>
                 <p className="text-lg">{completionText}</p>
             </div>
-            <div className="font-semibold text-lg">
+            <div className="font-semibold text-lg mb-6">
                 <div className="flex">
                     <p>$</p>
                     <p className="mb-2 ml-4">Fixed Price</p>
