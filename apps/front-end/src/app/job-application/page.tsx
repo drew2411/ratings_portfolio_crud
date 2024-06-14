@@ -2,9 +2,8 @@ import Sidebar from '@/Components/Dashboard/Sidebar';
 import GoogleLogo from '../../../public/assets/images/googleLogo.png';
 import Header from '@/Components/Dashboard/Header';
 import JobHeader from '@/Components/Job_Dashboard/JobHeader';
-import JobDetails from '@/Components/Job_Description/JobDetails';
+import JobApplication from '@/Components/Job_Application/JobApplication';
 import JobSideBar from '@/Components/Job_Dashboard/JobSideBar';
-import JobAdditionalDetails from '@/Components/Job_Description/JobDetailsBar';
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
         <Sidebar />
       </div>
 
-      <div className="pl-24">
+      <div className="pl-24 w-full">
         {/* Header Component */}
         <header className="p-4 pt-11">
           <Header />
@@ -31,31 +30,23 @@ export default function Home() {
           />
 
           {/* Job Info */}
-          <section className="flex">
-            {/* Job Details */}
-            <JobDetails />
+          <section className="flex border-t-2 border-[#1e1e1e] mt-6 w-full">
+            {/* Job Application Form */}
+            <JobApplication />
 
             {/* Job Sidebar Details */}
-            <JobSideBar
-              price={340}
-              currency="USD"
-              completionText="On completion of entire project"
-              duration="Less than 3 months"
-              clientRating={4.3}
-              isVerified={true}
-              memberSince={2024}
-            />
+            <section className="border-l-2 border-[#1e1e1e]">
+              <JobSideBar
+                price={340}
+                currency="USD"
+                completionText="On completion of entire project"
+                duration="Less than 3 months"
+                clientRating={4.3}
+                isVerified={true}
+                memberSince={2024}
+              />
+            </section>
           </section>
-
-          {/* Job Additional Details */}
-          <JobAdditionalDetails
-            yearExperience="0-1 Years"
-            workingType="Remote Working"
-            location="Jakarta"
-            workingHours="95 Hours, flexible"
-            projectDuration="Less than 3 months"
-            requiredSkills={["Figma", "Adobe XD", "Adobe Photoshop", "Adobe Illustrator", "Webflow"]}
-          />
         </main>
       </div>
     </div>
