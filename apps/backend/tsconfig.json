@@ -20,5 +20,6 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
+    "strict": true
   }
 }
