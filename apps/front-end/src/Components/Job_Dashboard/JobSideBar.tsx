@@ -1,6 +1,6 @@
 import React from "react";
-import StarImage from '../../../../public/assets/star.png';
-import MemberImage from '../../../../public/assets/member.png';
+import StarImage from '../../../public/assets/images/star.png';
+import MemberImage from '../../../public/assets/images/member.png';
 
 interface JobSideBarProps {
     price: number;

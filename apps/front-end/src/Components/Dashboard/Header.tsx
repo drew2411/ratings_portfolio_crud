@@ -1,6 +1,6 @@
 import React from "react";
-import BellIcon from '../../../../public/assets/bellIcon.png';
-import ProfileLogo from '../../../../public/assets/profileLogo.png';
+import BellIcon from '../../../public/assets/images/bellIcon.png';
+import ProfileLogo from '../../../public/assets/images/profileLogo.png';
 
 const Header: React.FC = () => {
     return (
