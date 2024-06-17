@@ -5,8 +5,10 @@ import {z} from 'zod';
 import * as trpcExpress from '@trpc/server/adapters/express'
 import { TrpcService } from "@server/trpc/trpc.service";
 import { FreelancerService } from "./freelancer.service";
-import { FreelancerCreateInputObjectSchema } from "../../prisma/generated/schemas/objects/FreelancerCreateInput.schema"
 
+import { FreelancerCreateInputObjectSchema} from "apps/backend/prisma/manual-zod-schemas/FreelancerCreateInput.schema"
+import { FreelancerWhereUniqueInputObjectSchema } from "apps/backend/prisma/manual-zod-schemas/FreelancerWhereUniqueInput.schema";
+import { FreelancerSelectObjectSchema } from "apps/backend/prisma/manual-zod-schemas/FreelancerSelect.schema"
 
 @Injectable()
 export class FreelancerRouter {
@@ -16,12 +18,22 @@ export class FreelancerRouter {
     ) {}
 
     freelancerRouter = this.trpc.router({
-      createFreelancer: this.trpc.procedure.input(FreelancerCreateInputObjectSchema).mutation(async ({ input, ctx }) => {
-        return this.fService.createFreelancer(input);
-      }),
-      getFreelancers: this.trpc.procedure.input(z.object({page: z.number(), limit: z.number()})).query(async ({input, ctx}) => {
-        return this.fService.findManyFreelancers(input.page, input.limit);
-      })
+      createFreelancer: this.trpc.procedure
+                        .input(FreelancerCreateInputObjectSchema)
+                        .mutation(async ({ input, ctx }) => {
+                          return this.fService.createFreelancer(input);
+                        }),
+      getFreelancers: this.trpc.procedure
+                      .input(z.object({page: z.number(), limit: z.number()}))
+                      .query(async ({input, ctx}) => {
+                        return this.fService.findManyFreelancers(input.page, input.limit);
+                      }),
+      getOneFreelancer: this.trpc.procedure
+                        .input(z.object({where: FreelancerWhereUniqueInputObjectSchema, select: FreelancerSelectObjectSchema}))
+                        .query(async ({input, ctx}) => {
+                          return this.fService.findUniqueFreelancer(input.where, input.select);
+                        }),
+      
     })
 
     async applyMiddleware(app: INestApplication) {
