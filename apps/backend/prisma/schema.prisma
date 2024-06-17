@@ -13,10 +13,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-generator zod {
-  provider         = "prisma-zod-generator"
-  isGenerateSelect = true
-}
+// generator zod {
+//   provider         = "prisma-zod-generator"
+//   isGenerateSelect = true
+// }
 
 // -- -- MORE SKILLS TO BE ADDED (PORTFOLIO TABLE, PROJECT APPLICANTS TABLE, PROJECT SELECTION TABLE)-- -- 
 enum Skills {
