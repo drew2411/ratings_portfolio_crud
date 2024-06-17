@@ -21,6 +21,9 @@ export class TrpcRouter {
       createFreelancer: this.trpc.procedure.input(FreelancerCreateInputObjectSchema).mutation(async ({ input, ctx }) => {
         return this.fService.createFreelancer(input);
       }),
+      getFreelancers: this.trpc.procedure.input(z.object({page: z.number(), limit: z.number()})).query(async ({input, ctx}) => {
+        return this.fService.findManyFreelancers(input.page, input.limit);
+      })
     })
 
     async applyMiddleware(app: INestApplication) {
