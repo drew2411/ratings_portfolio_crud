@@ -12,7 +12,7 @@ interface NotificationCheckListProps {
 
 const NotificationCheckList: React.FC<NotificationCheckListProps> = ({
   checkboxId,
-  checkboxClassName = "dark w-6 h-6 mr-12",
+  checkboxClassName = "dark w-6 h-6 mr-3 mx:mr-12",
   label1,
   label2
 }) => {
@@ -22,13 +22,13 @@ const NotificationCheckList: React.FC<NotificationCheckListProps> = ({
       <div className="grid gap-1.5 leading-none">
         <label
           htmlFor={checkboxId}
-          className="text-lg font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          className="text-base mx:text-lg font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pt-1 mx:pt-0"
         >
           {label1}
         </label>
         <label
           htmlFor={checkboxId}
-          className="text-lg font-semibold"
+          className="text-lg font-semibold mx:block hidden"
         >
           {label2}
         </label>
