@@ -11,5 +11,6 @@ import { FreelancerController } from './freelancer.controller';
     PrismaModule],
   controllers: [FreelancerController],
   providers: [FreelancerService],
+  exports: [FreelancerRoute]
 })
 export class AppModule {}

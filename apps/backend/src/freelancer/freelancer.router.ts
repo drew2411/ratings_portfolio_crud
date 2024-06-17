@@ -11,7 +11,7 @@ import { FreelancerCreateInputObjectSchema } from "../../prisma/generated/schema
 
 
 @Injectable()
-export class TrpcRouter {
+export class FreelancerRouter {
     constructor(
       private readonly trpc: TrpcService,
       private readonly fService: FreelancerService,
