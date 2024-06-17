@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { TrpcModule } from '@server/trpc/trpc.module';
 import { PrismaModule } from '@server/prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
+import { FreelancerModule } from '@server/freelancer/freelancer.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({isGlobal: true}),
     TrpcModule, 
-    PrismaModule],
+    PrismaModule,
+    FreelancerModule],
   controllers: [AppController],
   providers: [AppService],
 })
