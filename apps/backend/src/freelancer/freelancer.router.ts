@@ -19,28 +19,28 @@ export class FreelancerRouter {
     ) {}
 
     freelancerRouter = this.trpc.router({
-      createFreelancer: this.trpc.procedure
+      create: this.trpc.procedure
                         .input(FreelancerCreateInputObjectSchema)
                         .mutation(async ({ input, ctx }) => {
                           return this.fService.createFreelancer(input);
                         }),
-      getFreelancers: this.trpc.procedure
+      getMany: this.trpc.procedure
                       .input(z.object({page: z.number(), limit: z.number()}))
                       .query(async ({input, ctx}) => {
                         return this.fService.findManyFreelancers(input.page, input.limit);
                       }),
-      getOneFreelancer: this.trpc.procedure
+      getOne: this.trpc.procedure
                         .input(z.object({where: FreelancerWhereUniqueInputObjectSchema, select: FreelancerSelectObjectSchema.optional()}))
                         .query(async ({input, ctx}) => {
                           return this.fService.findUniqueFreelancer(input.where, input.select);
                         }),
-      updateFreelancer: this.trpc.procedure
+      update: this.trpc.procedure
                         .input(z.object({where: FreelancerWhereUniqueInputObjectSchema, data: FreelancerUpdateInputObjectSchema, select: FreelancerSelectObjectSchema.optional()}))
                         .mutation(async ({input, ctx}) => {
                           return this.fService.updateFreelancer(input.where, input.data, input.select);
                         }),
 
-      deleteFreelancer: this.trpc.procedure
+      delete: this.trpc.procedure
                         .input(FreelancerWhereUniqueInputObjectSchema)
                         .mutation(async ({input, ctx}) => {
                           return this.fService.deleteFreelancer(input);
