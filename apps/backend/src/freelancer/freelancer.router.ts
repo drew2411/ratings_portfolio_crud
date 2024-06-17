@@ -5,8 +5,6 @@ import {z} from 'zod';
 import * as trpcExpress from '@trpc/server/adapters/express'
 import { TrpcService } from "@server/trpc/trpc.service";
 import { FreelancerService } from "./freelancer.service";
-import { Prisma } from "@prisma/client";
-
 import { FreelancerCreateInputObjectSchema } from "../../prisma/generated/schemas/objects/FreelancerCreateInput.schema"
 
 
@@ -30,3 +28,5 @@ export class FreelancerRouter {
         app.use('/freelancer', trpcExpress.createExpressMiddleware({router: this.freelancerRouter}))
     }
 }
+
+export type FreelancerRouterType = FreelancerRouter['freelancerRouter'];

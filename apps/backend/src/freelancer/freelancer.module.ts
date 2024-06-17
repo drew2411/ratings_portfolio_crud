@@ -3,13 +3,12 @@ import { TrpcModule } from '@server/trpc/trpc.module';
 import { PrismaModule } from '@server/prisma/prisma.module';
 import { FreelancerService } from './freelancer.service';
 import { FreelancerRouter } from './freelancer.router';
+import { TrpcService } from '@server/trpc/trpc.service';
 
 @Module({
   imports: [
-    AppModule,
     TrpcModule, 
     PrismaModule],
-  providers: [FreelancerService],
-  exports: [FreelancerRouter]
+  providers: [FreelancerService, FreelancerRouter, TrpcService],
 })
-export class AppModule {}
+export class FreelancerModule {}
