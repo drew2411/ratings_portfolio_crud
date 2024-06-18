@@ -8,8 +8,9 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import { TrpcRouter } from './trpc/trpc.router';
-import { PortfolioRouter } from './portfolio/portfolio.router';
+import { PortfolioRouter } from './portfolio/potfolio.router';
 import { RatingsRouter } from './ratings/ratings.router';
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
