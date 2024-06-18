@@ -8,6 +8,8 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import { TrpcRouter } from './trpc/trpc.router';
+import { FreelancerRouter } from './freelancer/freelancer.router';
+import { ClientRouter } from './client/client.router';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,6 +19,16 @@ async function bootstrap() {
   // ADDING TRPC
   const trpc = app.get(TrpcRouter);
   trpc.applyMiddleware(app);
+
+  // ADDING Freelancer
+
+  const freelancer = app.get(FreelancerRouter);
+  freelancer.applyMiddleware(app);
+
+   // ADDING Client
+
+   const client = app.get(ClientRouter);
+   client.applyMiddleware(app);
   
   await app.listen(port);
   Logger.log(
