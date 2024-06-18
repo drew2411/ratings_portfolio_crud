@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
 
-// Assuming you have the appropriate schemas for ClientCreateNestedOneWithoutRatingsInput and FreelancerCreateNestedOneWithoutRatingsInput
 // import { ClientCreateNestedOneWithoutRatingsInputObjectSchema } from '../client/ClientCreateNestedOneWithoutRatingsInput.schema';
 // import { FreelancerCreateNestedOneWithoutRatingsInputObjectSchema } from '../freelancer/FreelancerCreateNestedOneWithoutRatingsInput.schema';
 
