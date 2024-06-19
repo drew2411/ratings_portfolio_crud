@@ -12,9 +12,9 @@ const Notification: React.FC = () => {
                 description="Get notification what's happening right now you can turn off at any time."
             />
 
-            <section className="w-full ml-8 bg-[#1C1B1A] my-6 border-2 border-[#252525] rounded-md p-8">
-                <h3 className="font-semibold text-xl pl-8">Email Notification</h3>
-                <p className="font-normal text-lg pl-8 mb-8">Substances can send you email notification for any  new direct messages.</p>
+            <section className="w-full mx:ml-8 sx:bg-[#1C1B1A] sx:my-6 sx:border-2 sx:border-[#252525] rounded-md py-6 sx:p-8 mx:p-12">
+                <h3 className="font-semibold text-base mx:text-xl mx:pl-8">Email Notification</h3>
+                <p className="font-normal text-sm mx:text-lg mx:pl-8 mb-8">Substances can send you email notification for any  new direct messages.</p>
 
                 {/* Toggle Button */}
                 <div className="flex items-center space-x-2 mb-8">
@@ -48,9 +48,9 @@ const Notification: React.FC = () => {
                 </section>
             </section>
 
-            <section className="w-full ml-8 bg-[#1C1B1A] my-6 mb-16 border-2 border-[#252525] rounded-md p-12">
-                <h3 className="font-semibold text-xl pl-8">More Activity</h3>
-                <p className="font-normal text-lg pl-8 mb-8">Substances can send you email notification for any  new direct messages.</p>
+            <section className="w-full mx:ml-8 sx:bg-[#1C1B1A] sx:my-6 sx:border-2 sx:border-[#252525] rounded-md py-6 sx:p-8 mx:p-12">
+                <h3 className="font-semibold text-base mx:text-xl mx:pl-8">More Activity</h3>
+                <p className="font-normal text-sm mx:text-lg mx:pl-8 mb-8">Substances can send you email notification for any  new direct messages.</p>
 
                 {/* Toggle Button */}
                 <div className="flex items-center space-x-2 mb-8">

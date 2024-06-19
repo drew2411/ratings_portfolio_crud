@@ -27,7 +27,7 @@ const SettingsSideBar: React.FC<{ onSelect: (page: string) => void }> = ({ onSel
                     <button
                         className={`w-full ${
                             selected === button ? "bg-[#1e1e1e]" : "hover:bg-[#1e1e1e]"
-                        } font-semibold text-lg py-3 flex pl-4`}
+                        } font-medium mx:font-semibold text-sm mx:text-lg py-3 flex mx:pl-0`}
                         onClick={() => handleClick(button)}
                     >
                         {button}

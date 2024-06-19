@@ -12,6 +12,7 @@ import Plans from "@/Components/Settings_Page/Plans";
 import Notification from "@/Components/Settings_Page/Notification";
 import ThemePreferences from "@/Components/Settings_Page/ThemePreferences";
 import Language from "@/Components/Settings_Page/Language";
+import Dropdown from "@/Components/Settings_Page/Dropdown";
 
 const Settings: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<string>("Notification");
@@ -40,28 +41,33 @@ const Settings: React.FC = () => {
   return (
     <div className="bg-[#1e1e1e] min-h-screen text-white pb-12 flex relative">
       {/* Sidebar */}
-      <div className="fixed top-0 left-2">
+      <div className="fixed top-0 left-2 hidden mx:block">
         <Sidebar />
       </div>
 
-      <div className="pl-24 w-full">
+      <div className="sx:p-4 mx:pl-24 w-full">
         {/* Header Component */}
-        <header className="p-4 pt-11">
+        <header className="p-4 pt-8 sx:pt-10">
           <Header />
         </header>
 
+        {/* Dropdown for Phone */}
+        <nav className="sx:hidden block px-8 bg-[#000] text-white rounded-xl p-4 mx-4">
+          <Dropdown onSelect={setSelectedPage} />
+        </nav>
+
         {/* Job Description */}
-        <main className="bg-[#000] text-white rounded-3xl rounded-3xl m-4 mb-0 p-8 ">
-          <h1 className='text-3xl font-semibold w-full h-20 border-b-2 border-[#1e1e1e]'>Settings</h1>
+        <main className="bg-[#000] text-white rounded-3xl rounded-3xl m-4 mb-0 p-6 mx:p-8 ">
+          <h1 className='text-2xl mx:text-3xl font-semibold w-full pb-6 mx:h-20 border-b-2 border-[#1e1e1e] sx:block hidden'>Settings</h1>
 
           <section className="flex">
             {/* Settings Sidebar */}
-            <nav className='h-full w-[20%] pt-4'>
+            <nav className='h-full w-[40%] mx:w-[20%] pt-4 sx:block hidden'>
               <SettingsSideBar onSelect={setSelectedPage} />
             </nav>
 
             {/* Settings Main */}
-            <section className="flex-grow p-4 border-l-2 border-[#1e1e1e]">
+            <section className="flex-grow p-4 pr-0 sx:pr-4 border-l-2 border-[#1e1e1e]">
               {renderContent()}
             </section>
           </section>
