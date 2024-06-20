@@ -6,9 +6,9 @@ import { TrpcModule } from '@server/trpc/trpc.module';
 import { TrpcService } from '@server/trpc/trpc.service';
 
 @Module({
-  imports : [PrismaModule,ProjectApplicationModule,TrpcModule],
+  imports: [PrismaModule, TrpcModule],
   providers: [ProjectApplicationService, ProjectApplicationRouter, TrpcService],
-  exports: [ProjectApplicationService], 
+  exports: [ProjectApplicationService, ProjectApplicationRouter], // Export if needed in other modules
 })
 export class ProjectApplicationModule {}
 

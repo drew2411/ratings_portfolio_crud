@@ -6,12 +6,10 @@ import { ProjectRouter } from './project.router';
 import { TrpcService } from '@server/trpc/trpc.service';
 
 @Module({
-  imports: [PrismaModule,ProjectModule,TrpcModule],
+  imports: [PrismaModule, TrpcModule],
   providers: [ProjectService, ProjectRouter, TrpcService],
-  exports: [ProjectService], 
+  exports: [ProjectService, ProjectRouter], // Export if needed in other modules
 })
-export class ProjectModule {
-
-}
+export class ProjectModule {}
 
 
