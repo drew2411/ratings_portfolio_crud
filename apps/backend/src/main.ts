@@ -10,6 +10,9 @@ import { AppModule } from './app/app.module';
 import { TrpcRouter } from './trpc/trpc.router';
 import { FreelancerRouter } from './freelancer/freelancer.router';
 import { ClientRouter } from './client/client.router';
+import { ProjectRouter } from './project/project.router';
+import { ProjectApplicationRouter } from './project-application/project-application.router';
+import { ProjectSelectionRouter } from './project-selection/project-selection.router';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -21,14 +24,24 @@ async function bootstrap() {
   trpc.applyMiddleware(app);
 
   // ADDING Freelancer
-
   const freelancer = app.get(FreelancerRouter);
   freelancer.applyMiddleware(app);
 
-   // ADDING Client
+  // ADDING Client
+  const client = app.get(ClientRouter);
+  client.applyMiddleware(app);
 
-   const client = app.get(ClientRouter);
-   client.applyMiddleware(app);
+  // ADDING Project
+  const project = app.get(ProjectRouter);
+  project.applyMiddleware(app);
+
+  // ADDING ProjectApplication
+  const projectApplication = app.get(ProjectApplicationRouter);
+  projectApplication.applyMiddleware(app);
+
+  // ADDING ProjectSelection
+  const projectSelection = app.get(ProjectSelectionRouter);
+  projectSelection.applyMiddleware(app);
   
   await app.listen(port);
   Logger.log(
@@ -37,3 +50,4 @@ async function bootstrap() {
 }
 
 bootstrap();
+

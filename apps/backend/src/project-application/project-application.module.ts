@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
-import { ProjectApplicationController } from './project-application.controller';
 import { ProjectApplicationService } from './project-application.service';
 import { PrismaModule } from 'apps/backend/src/prisma/prisma.module';
+import { ProjectApplicationRouter } from './project-application.router';
+import { TrpcModule } from '@server/trpc/trpc.module';
+import { TrpcService } from '@server/trpc/trpc.service';
 
 @Module({
-  imports : [PrismaModule,ProjectApplicationModule],
-  controllers: [ProjectApplicationController],
-  providers: [ProjectApplicationService],
-  exports :[ProjectApplicationService]
+  imports: [PrismaModule, TrpcModule],
+  providers: [ProjectApplicationService, ProjectApplicationRouter, TrpcService],
+  exports: [ProjectApplicationService, ProjectApplicationRouter], // Export if needed in other modules
 })
 export class ProjectApplicationModule {}
+
+
