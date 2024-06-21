@@ -2,17 +2,17 @@
 
 import React, { useState } from "react";
 
-import Sidebar from '@/Components/Dashboard/Sidebar';
-import Header from '@/Components/Dashboard/Header';
-import SettingsSideBar from '@/Components/Settings_Page/SettingsSideBar';
-import GeneralDetails from "@/Components/Settings_Page/GeneralDetails";
-import UserPermission from "@/Components/Settings_Page/UserPermission";
-import Billing from "@/Components/Settings_Page/Billing";
-import Plans from "@/Components/Settings_Page/Plans";
-import Notification from "@/Components/Settings_Page/Notification";
-import ThemePreferences from "@/Components/Settings_Page/ThemePreferences";
-import Language from "@/Components/Settings_Page/Language";
-import Dropdown from "@/Components/Settings_Page/Dropdown";
+import Sidebar from '@web/Components/Dashboard/Sidebar';
+import Header from '@web/Components/Dashboard/Header';
+import SettingsSideBar from '@web/Components/Settings_Page/SettingsSideBar';
+import GeneralDetails from "@web/Components/Settings_Page/GeneralDetails";
+import UserPermission from "@web/Components/Settings_Page/UserPermission";
+import Billing from "@web/Components/Settings_Page/Billing";
+import Plans from "@web/Components/Settings_Page/Plans";
+import Notification from "@web/Components/Settings_Page/Notification";
+import ThemePreferences from "@web/Components/Settings_Page/ThemePreferences";
+import Language from "@web/Components/Settings_Page/Language";
+import Dropdown from "@web/Components/Settings_Page/Dropdown";
 
 const Settings: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<string>("Notification");
@@ -62,7 +62,7 @@ const Settings: React.FC = () => {
 
           <section className="flex">
             {/* Settings Sidebar */}
-            <nav className='h-full w-[40%] mx:w-[20%] pt-4 sx:block hidden'>
+            <nav className='h-full w-[40%] sx:min-w-[133px] mx:min-w-[172px] mx:w-[20%] pt-4 sx:block hidden'>
               <SettingsSideBar onSelect={setSelectedPage} />
             </nav>
 

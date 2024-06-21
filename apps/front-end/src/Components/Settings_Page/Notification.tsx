@@ -2,7 +2,7 @@ import React from "react";
 import SettingsHeader from "./SettingsHeader";
 import NotificationCheckList from "./NotificationCheckList";
 import { Switch } from "../ui/switch";
-import { Label } from "@radix-ui/react-label";
+import { Label } from "../ui/label";
 
 const Notification: React.FC = () => {
     return (
