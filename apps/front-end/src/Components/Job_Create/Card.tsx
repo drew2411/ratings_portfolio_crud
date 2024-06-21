@@ -15,7 +15,7 @@ const Card = () => {
   const [count, setCount] = useState(0);
   const [selectedSalaryType, setSelectedSalaryType] = useState('');
 
-  const handleRadioChange = (e) => {
+  const handleRadioChange = (e:any) => {
     setSelectedSalaryType(e.target.value);
   };
 

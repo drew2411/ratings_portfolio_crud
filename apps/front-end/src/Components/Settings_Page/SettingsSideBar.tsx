@@ -25,7 +25,7 @@ const SettingsSideBar: React.FC<{ onSelect: (page: string) => void }> = ({ onSel
             {buttons.map((button, index) => (
                 <li key={index}>
                     <button
-                        className={`w-full ${
+                        className={`w-full sx:min-w-[133px] mx:min-w-[172px] ${
                             selected === button ? "bg-[#1e1e1e]" : "hover:bg-[#1e1e1e]"
                         } font-medium mx:font-semibold text-sm mx:text-lg py-3 flex mx:pl-0`}
                         onClick={() => handleClick(button)}
