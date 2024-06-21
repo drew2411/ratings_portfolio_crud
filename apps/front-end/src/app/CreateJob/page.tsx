@@ -1,5 +1,5 @@
-import Card from "@web/Components/Job_Create/Card"
-import TopNav from "@web/Components/Job_Create/TopNav"
+import Card from "@/Components/Job_Create/Card"
+import TopNav from "@/Components/Job_Create/TopNav"
 
 
 const CreateJob = () => {
@@ -7,9 +7,9 @@ const CreateJob = () => {
         
           <main className='bg-[url("/background.svg")] bg-cover'>
             <div className='flex flex-col items-center justify-center'>
-            <TopNav/>
+            <TopNav />
             
-            <Card/>
+            <Card />
          
             
           </div>
